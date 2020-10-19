@@ -10,7 +10,7 @@
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
 				{{ range $paginator.Pages }}
 				<section class="list-item">
-					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a><time>sometime in {{ dateFormat "2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time></h1>
+					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a><time>{{ dateFormat "2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time></h1>
 					<div class="description">
 
             {{ $image := .Page.Resources.ByType "image" }}

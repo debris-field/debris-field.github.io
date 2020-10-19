@@ -2,8 +2,9 @@
 	<div class="main">
 		{{ if .Site.Params.logo }}
       <a href="{{ .Site.BaseURL }}" class="logo">
-      <img src="{{ .Site.BaseURL }}images/logo.png" width="{{ .Site.Params.logo.width }}" class="bottom">
-			<img src="{{ .Site.BaseURL }}images/logo_inv.png" width="{{ .Site.Params.logo.width }}" class="top">
+      <img src="{{ .Site.BaseURL }}images/logo.png" width="{{ .Site.Params.logo.width }}" class="bottom" id=logo_inv>
+			<img src="{{ .Site.BaseURL }}images/logo_inv.png" width="{{ .Site.Params.logo.width }}" class="top" id=logo>
+			<img src="{{ .Site.BaseURL }}images/logo_short.png" width="64" class="short">
       </a>
 
 		{{ else }}

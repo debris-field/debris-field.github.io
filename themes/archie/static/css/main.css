@@ -33,7 +33,7 @@ p {
 
 hr {
   border: 0;
-  border-top: 3px dotted var(--bordercl);
+  border-top: 2px dotted var(--bordercl);
   margin: 0 0 1em 0;
 }
 
@@ -83,6 +83,7 @@ img {
   border: 3px solid #ececec;
   max-width: 100%;
 }
+
 img.img-responsive {
   margin-right: 2em;
 }
@@ -98,7 +99,22 @@ figure img {
   max-height: 500px;
 }
 
+@media screen and (max-width: 600px) {
+  img.short{
+    display : block;
+  }
+  img.top{
+    display: none;
+  }
+  img.bottom {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 600px) {
+  img.short{
+    display : none;
+  }
   figure {
     padding: 0 40px;
   }
@@ -149,6 +165,7 @@ pre code {
 }
 
 /* Header */
+
 header {
   display: flex;
   flex-wrap: wrap;
