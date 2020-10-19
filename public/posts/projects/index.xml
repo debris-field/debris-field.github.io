@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Debris Field</title>
+    <link>http://debris-field.github.io/posts/projects/</link>
+    <description>Recent content in Projects on Debris Field</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Oct 2017 20:44:14 +0200</lastBuildDate><atom:link href="http://debris-field.github.io/posts/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Obscure Ecologies</title>
+      <link>http://debris-field.github.io/posts/projects/obscure_ecologies/</link>
+      <pubDate>Sun, 15 Oct 2017 20:44:14 +0200</pubDate>
+      
+      <guid>http://debris-field.github.io/posts/projects/obscure_ecologies/</guid>
+      <description>Obscure Ecologies is an algorithmic mashup of images, based on a a ruleset which mimics natural processes. Pixels on the digital canvas are transformed by an invisible ecology of creatures, which come to life, reproduce and die given the scarcity of the &amp;ldquo;food&amp;rdquo; in their pixel- based environment.</description>
+    </item>
+    
+  </channel>
+</rss>
