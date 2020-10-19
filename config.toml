@@ -1,0 +1,44 @@
+baseURL = "http://debris-field.github.io"
+publishDir = ".."
+languageCode = "en-us"
+title = "Debris Field"
+theme = "archie"
+summaryLength = 20
+
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/debris-field/"
+
+[[params.social]]
+name = "Soundcloud"
+icon = "volume-2"
+url = "https://soundcloud.com/debris_field/"
+
+[params]
+	mode="light"
+	featherIconsCDN=true
+	subtitle = ""
+
+	[params.logo]
+		url = "logo.png"
+		width = 350
+
+[[menu.main]]
+name = "Projects"
+url = "/tags/project"
+weight = 1
+
+[[menu.main]]
+name = "Fragments"
+url = "/posts/fragments"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3

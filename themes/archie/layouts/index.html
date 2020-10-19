@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	{{ partial "header.html" . }}
+	<body>
+		<div class="content">
+			{{ partial "head.html" . }}
+			<main class="list">
+
+				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
+				{{ range $paginator.Pages }}
+				<section class="list-item">
+					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a><time>sometime in {{ dateFormat "2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time></h1>
+					<div class="description">
+
+            {{ $image := .Page.Resources.ByType "image" }}
+						{{ with $image.GetMatch "*cover*"}}
+							{{ $thumb := .Fill "740x180" }}
+              <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" class="img-responsive">
+						{{ end }}
+						{{ if isset .Params "description" }}
+						{{ .Description }}
+						{{ else }}
+						{{ .Summary | truncate 150 }}
+						{{ end }}
+					</div>
+				</section>
+				{{ end }}
+				{{ template "partials/paginator.html" . }}
+			</main>
+			{{ partial "footer.html" . }}
+		</div>
+
+	</body>
+</html>
