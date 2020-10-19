@@ -24,7 +24,7 @@ url = "https://soundcloud.com/debris_field/"
 	subtitle = ""
 
 	[params.logo]
-		url = "logo.png"
+		url = "/images/logo.png"
 		width = 350
 
 [[menu.main]]
