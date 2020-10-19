@@ -1,6 +1,7 @@
-baseURL = "http://debris-field.github.io"
+baseURL = "/"
 languageCode = "en-us"
 title = "Debris Field"
+publishDir = ".."
 theme = "archie"
 summaryLength = 20
 
