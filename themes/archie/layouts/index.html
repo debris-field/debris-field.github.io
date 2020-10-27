@@ -7,7 +7,7 @@
 			<main class="list">
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
-				{{ range $paginator.Pages }}
+				{{ range $paginator.Pages.ByDate.Reverse }}
 				<section class="list-item">
 					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a>
 						<span class="list-tags">
@@ -15,7 +15,13 @@
 						<a href='{{ $.Site.LanguagePrefix | absURL }}tags/{{ $value | urlize }}/'>{{ $value }}</a>
 						{{ end }}
 						</span>
-						<time>{{ dateFormat "2006" .Date }}</time>
+						<time>
+							{{ if and (lt .Date (now.AddDate -2 0 0)) (gt .Date (now.AddDate -3 0 0)) }} ca {{ dateFormat "2006" .Date }}
+							{{ else if and (lt .Date (now.AddDate -1 0 0)) (gt .Date (now.AddDate -2 0 0)) }} {{ dateFormat "Jan, 2006" .Date }}
+							{{ else if gt .Date (now.AddDate -1 0 0)}} {{ dateFormat "Jan 2, 2006" .Date }}
+							{{ else }}Long time ago
+							{{ end }}
+						</time>
 						{{ if .Draft }}
 						<span class="draft-label">DRAFT</span>
 						{{ end }}
@@ -26,10 +32,10 @@
 						{{ else }}
 						{{ .Summary | truncate 150 }}
 						{{ end }}
-						
+
             {{ $image := .Page.Resources.ByType "image" }}
 						{{ with $image.GetMatch "*cover*"}}
-							{{ $thumb := .Fill "740x180" }}
+							{{ $thumb := .Fill "740x150" }}
               <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" class="img-responsive">
 						{{ end }}
 
