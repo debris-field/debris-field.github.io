@@ -5,24 +5,38 @@
 		<div class="content">
 			{{ partial "head.html" . }}
 			<main class="list">
-
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
 				{{ range $paginator.Pages }}
 				<section class="list-item">
-					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a><time>{{ dateFormat "2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</time></h1>
-					<div class="description">
-
-            {{ $image := .Page.Resources.ByType "image" }}
-						{{ with $image.GetMatch "*cover*"}}
-							{{ $thumb := .Fill "740x180" }}
-              <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" class="img-responsive">
+					<h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a>
+						<span class="list-tags">
+						{{ range $key, $value := .Params.tags }}
+						<a href='{{ $.Site.LanguagePrefix | absURL }}tags/{{ $value | urlize }}/'>{{ $value }}</a>
 						{{ end }}
+						</span>
+						<time>{{ dateFormat "2006" .Date }}</time>
+						{{ if .Draft }}
+						<span class="draft-label">DRAFT</span>
+						{{ end }}
+					</h1>
+					<div class="description">
 						{{ if isset .Params "description" }}
 						{{ .Description }}
 						{{ else }}
 						{{ .Summary | truncate 150 }}
 						{{ end }}
+						
+            {{ $image := .Page.Resources.ByType "image" }}
+						{{ with $image.GetMatch "*cover*"}}
+							{{ $thumb := .Fill "740x180" }}
+              <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" class="img-responsive">
+						{{ end }}
+
+						{{ range findRE "(<iframe)+(.|\n)+(soundcloud)+(.|\n)+(</iframe>)+" .Content 1 }}
+						{{ . | safeHTML}}
+						{{ end }}
+
 					</div>
 				</section>
 				{{ end }}

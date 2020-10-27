@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Enriqueta&family=Quicksand&display=swap');
 :root{
 --maincolor: #71CC98;
---bordercl:#bbb;
+--bordercl:#ddd;
 --callouctcolor:dodgerblue;
 --hovercolor:#71CC98;
 --darkMaincolor: #50fa7b;
@@ -35,6 +35,16 @@ hr {
   border: 0;
   border-top: 2px dotted var(--bordercl);
   margin: 0 0 1em 0;
+}
+/*nice border from svg */
+
+.dots {
+  padding: 6px;
+  border-width: 7px 0 0 0 ;
+  border-style: dotted;
+  border-color: var(--bordercl);
+  border-image: url('/images/dots.svg') 33% round;
+
 }
 
 nav {
@@ -80,11 +90,13 @@ ul li {
 /* Images */
 
 img {
-  border: 3px solid #ececec;
+  margin-top: 10px;
+  border: 3px solid var(--bordercl);
   max-width: 100%;
 }
 
 img.img-responsive {
+  margin-top: 1em;
   margin-right: 2em;
 }
 
@@ -180,6 +192,7 @@ header .main {
   max-width: 100%;
 }
 header .main img {
+  margin-top:0;
   position:absolute;
   padding-top:1.3rem;
   border: 0px;
@@ -202,22 +215,26 @@ header .main img.top:hover{
 
 
 h1 {
-  font-size: 1.4rem;
-  margin-top: 2em;
-}
-
-h2, h3, h4, h5, h6 {
-
   font-size: 1.2rem;
   margin-top: 1em;
 }
 
+h2 {
+
+  font-size: 1.1rem;
+}
+h3, h4, h5, h6{
+  font-size: 1rem;
+}
+
 h1::before { color: var(--maincolor); content: '* '; }
-h2::before { color: var(--maincolor); padding-left: 1em}
-h3::before { color: var(--maincolor); margin-left: 2em}
-h4::before { color: var(--maincolor); margin-left: 3em}
-h5::before { color: var(--maincolor); margin-left: 4em}
-h6::before { color: var(--maincolor); margin-left: 5em}
+h2 { margin-left: -.8em}
+h2::before { color: var(--maincolor); content: ''; }
+h3 { margin-left: -.5em}
+h3::before { color: var(--maincolor); content: ''; }
+h4 { margin-left: -.5em}
+h5 { }
+h6 { }
 
 /* Footer */
 footer {
@@ -249,14 +266,15 @@ footer .credits{
 }
 
 /* Common */
-.title h1 {
+h1 .title{
 
 }
 
 time {
   color: var(--bordercl);
   font-size: .8em;
-  padding-left: 1em;
+  font-weight: 100;
+  padding-left: .5em;
 }
 
 /* Posts */
@@ -305,33 +323,56 @@ justify-content: space-between;
   padding-bottom: 0;
 }
 .nav-tags {
-  font-size: 1.1em;
-  padding-top: 0;
-  padding-left: 1em;
+  font-size: 1em;
+  padding-top: 1em;
+  font-weight: 100;
+
 }
 .nav-tags a{
-  color: #fff;
-  background-color: var(--hovercolor);
+  color: var(--hovercolor);
+  border-bottom: 0;
+  background-color: white;
   padding-left: .2em;
   padding-right: .2em;
 }
 .nav-tags a:hover{
-  background-color: #fff;
-  color:var(--hovercolor);
-  border-bottom: 0;
+  background-color: var(--hovercolor);
+  color: white;
 }
 
 .tags a{
-  color: #fff;
-  background-color: var(--hovercolor);
-  padding-left: .2em;
-  padding-right: .2em;
+  color: var(--hovercolor);
+  border-bottom: 0;
+  background-color: white;
+  padding-left: .15em;
+  padding-right: .15em;
+
 }
 .tags a:hover{
-  background-color: #fff;
-  color:var(--hovercolor);
-  border-bottom: 0;
+  background-color: var(--hovercolor);
+  color: white;
 }
+
+.list-tags {
+  font-size: 0.8em;
+  font-weight: 100;
+  padding-left: .5em;
+}
+
+.list-tags a{
+  color: var(--hovercolor);
+  border-bottom: 0;
+  background-color: white;
+  padding-left: .2em;
+  padding-right: .2em;
+
+}
+.list-tags a:hover{
+  background-color: var(--hovercolor);
+  color: white;
+
+}
+
 svg{
   max-height: 15px;
 }
