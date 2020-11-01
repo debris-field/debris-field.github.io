@@ -16,7 +16,7 @@
 						{{ end }}
 						</span>
 						<time>
-							{{ if and (lt .Date (now.AddDate -2 0 0)) (gt .Date (now.AddDate -3 0 0)) }} ca {{ dateFormat "2006" .Date }}
+							{{ if and (lt .Date (now.AddDate -2 0 0)) (gt .Date (now.AddDate -5 0 0)) }} ca {{ dateFormat "2006" .Date }}
 							{{ else if and (lt .Date (now.AddDate -1 0 0)) (gt .Date (now.AddDate -2 0 0)) }} {{ dateFormat "Jan, 2006" .Date }}
 							{{ else if gt .Date (now.AddDate -1 0 0)}} {{ dateFormat "Jan 2, 2006" .Date }}
 							{{ else }}Long time ago

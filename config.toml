@@ -11,7 +11,7 @@ pygmentscodefencesguesssyntax = true
 
 [[params.social]]
 name = "Soundcloud"
-icon = "volume-2"
+icon = "headphones"
 url = "https://soundcloud.com/debris_field/"
 
 [params]

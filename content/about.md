@@ -1,7 +1,6 @@
 ---
 title: 'About'
 button: 'About'
-draft: false
 weight: 4
 ---
 

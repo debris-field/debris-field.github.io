@@ -1,8 +1,8 @@
 ---
 title: "Relics: A Transient Dataset"
-date: 2018-10-15T20:43:13+02:00
+date: 2018-09-06
 draft: false
-description: 5 Variations on architectural 3d models
+description: 5 Variations on a large collection of architectural 3d models
 tags: [Project,Print]
 ---
 Exhibited in [Photobastei](http://www.photobastei.ch/) in September 2018.
